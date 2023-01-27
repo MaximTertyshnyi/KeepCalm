@@ -1,5 +1,6 @@
 import { Typography } from "./common/Typography";
-import { ScreenHeader, ScreenFooter } from "./components/HeaderAndFooter";
+import { ScreenHeader } from "./components/Header";
+import { ScreenFooter } from "./components/Footer";
 import styled from "styled-components";
 import julia from "./assets/julia.png";
 import taisiiaStupak from "./assets/taisiiaStupak.png";

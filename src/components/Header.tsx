@@ -24,7 +24,7 @@ const Logo = styled.img`
   }
 `;
 
-const ConteinerHeader = styled.div`
+const ContainerHeader = styled.div`
   display: flex;
   width: 100%;
   margin: 0 262px 0 262px;
@@ -38,7 +38,7 @@ const ConteinerHeader = styled.div`
   }
 `;
 
-const CustomTypographyHeader = styled(Typography)`
+const CustomHeaderTypography = styled(Typography)`
   font-size: 24px;
   font-weight: 500;
   line-height: 33px;
@@ -62,41 +62,16 @@ const TelephoneIcon = styled(BsTelephone)`
   }
 `;
 
-const ScreenHeader = () => {
+export const ScreenHeader = () => {
   return (
     <Header>
-      <ConteinerHeader>
+      <ContainerHeader>
         <Logo src={logo} />
         <a style={{ textDecoration: "none" }} href="tel:+7 (495) 495-49-54">
-          <CustomTypographyHeader text="+7 (495) 495-49-54" size="custom" />
+          <CustomHeaderTypography text="+7 (495) 495-49-54" size="custom" />
           <TelephoneIcon />
         </a>
-      </ConteinerHeader>
+      </ContainerHeader>
     </Header>
   );
 };
-
-const Footer = styled.div`
-  display: flex;
-  height: 200px;
-  width: 100%;
-  background: black;
-`;
-
-const CustomTypographyFooter = styled(Typography)`
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  color: white;
-  margin: auto auto 18px auto;
-`;
-
-const ScreenFooter = () => {
-  return (
-    <Footer>
-      <CustomTypographyFooter text=" © TEST, 1022–2022" size="custom" />
-    </Footer>
-  );
-};
-
-export { ScreenFooter, ScreenHeader };

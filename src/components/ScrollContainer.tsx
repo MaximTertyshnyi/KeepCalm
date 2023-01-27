@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Tween } from "react-gsap";
 import { gsap } from "gsap";
@@ -7,7 +6,7 @@ import { galery } from "../common/ImgMassive";
 
 gsap.registerPlugin(SlowMo);
 
-const Conteiner = styled.div`
+const Container = styled.div`
   width: 100%;
   gap: 50px;
   display: flex;
@@ -22,7 +21,7 @@ const Conteiner = styled.div`
   }
 `;
 
-const ConteinerNoSwipe = styled(Conteiner)`
+const ContainerNoSwipe = styled(Container)`
   @media (max-width: 380px) {
     overflow: hidden;
     overflow-x: scroll;
@@ -31,14 +30,6 @@ const ConteinerNoSwipe = styled(Conteiner)`
 `;
 
 const ScrollContainer = () => {
-  const [timer, setTimer] = React.useState(5);
-
-  React.useEffect(() => {
-    window.setInterval(() => {
-      setTimer((time) => time - 10);
-    }, 1000);
-  }, []);
-
   return (
     <Tween
       to={{
@@ -53,13 +44,13 @@ const ScrollContainer = () => {
         ease: "slow(0.1, 0.2)",
       }}
     >
-      <Conteiner>{galery}</Conteiner>
+      <Container>{galery}</Container>
     </Tween>
   );
 };
 
 const NoneScrollContainer = () => {
-  return <ConteinerNoSwipe>{galery}</ConteinerNoSwipe>;
+  return <ContainerNoSwipe>{galery}</ContainerNoSwipe>;
 };
 
 export const GalleryContainer = () => {
